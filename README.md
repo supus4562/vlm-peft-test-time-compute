@@ -1,6 +1,6 @@
-# ATML PA3 - Task 1: Large Language Model Fine-Tuning
+# Multimodal PEFT & Test-Time Compute Reasoning Framework
 
-Modular, high-performance implementation for **Task 1: Large Language Model Fine-Tuning** of EE-5102 / CS-6304 Advanced Topics in Machine Learning (Programming Assignment 3).
+Modular, high-performance implementation for **Parameter-Efficient Multimodal Fine-Tuning and Inference-Time Compute Scaling** on modern LLM & VLM architectures (Qwen, PaliGemma).
 
 Optimized for **NVIDIA RTX 6000 Pro Blackwell / Ada / Hopper Architectures** to complete all 5 training runs, checkpointing, diagnostics, qualitative analysis, and 7 benchmark evaluations in under **30–35 minutes**.
 
@@ -9,7 +9,7 @@ Optimized for **NVIDIA RTX 6000 Pro Blackwell / Ada / Hopper Architectures** to 
 ## 1. Directory Structure
 
 ```text
-ATML-PA3/
+vlm-peft-test-time-compute/
 ├── configs/
 │   └── task1_config.yaml         # Central configuration (hyperparameters, seeds, paths)
 ├── task1/
@@ -39,7 +39,7 @@ ATML-PA3/
 
 ## 2. Invariants Checklist & Exact Formulations
 
-The codebase strictly enforces all assignment invariants:
+The framework strictly enforces rigorous experimental constraints and invariants:
 
 | Category | Invariant Rule | Implementation Detail |
 | :--- | :--- | :--- |
@@ -122,7 +122,7 @@ The `kaggle-gpu` branch incorporates specialized memory optimizations to run fla
 - **Adaptive Workers**: DataLoader concurrency adapted to Kaggle's `/dev/shm` shared memory boundaries.
 
 ### Option A: Using the Interactive Jupyter Notebook
-Open and run [`kaggle_task1.ipynb`](file:///home/supus/Projects/ATML/ATML-PA3/kaggle_task1.ipynb) directly in Kaggle:
+Open and run [`kaggle_task1.ipynb`](file:///home/supus/Projects/ATML/vlm-peft-test-time-compute/kaggle_task1.ipynb) directly in Kaggle:
 1. Upload `kaggle_task1.ipynb` to Kaggle Notebooks.
 2. Select **Settings** $\to$ **Accelerator** $\to$ **GPU T4 x 2** or **GPU P100**.
 3. Toggle **Internet** $\to$ **On**.
@@ -131,8 +131,8 @@ Open and run [`kaggle_task1.ipynb`](file:///home/supus/Projects/ATML/ATML-PA3/ka
 ### Option B: Using the Command Line / Terminal on Kaggle
 ```bash
 # Clone the kaggle-gpu branch
-git clone -b kaggle-gpu https://github.com/supus4562/ATML-PA3.git
-cd ATML-PA3
+git clone -b kaggle-gpu https://github.com/supus4562/vlm-peft-test-time-compute.git
+cd vlm-peft-test-time-compute
 
 # Run the complete pipeline
 bash run_kaggle.sh
